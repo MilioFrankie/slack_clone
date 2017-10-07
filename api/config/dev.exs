@@ -25,7 +25,7 @@ config :phoenix, :stacktrace_depth, 20
 config :slack_clone, SlackClone.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "slack_clone_dev",
   hostname: "localhost",
   pool_size: 10
