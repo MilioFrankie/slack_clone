@@ -56,6 +56,7 @@ config :logger, level: :info
 #     config :slack_clone, SlackClone.Endpoint, server: true
 #
 
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
+config :guardian, Guardian,
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 import_config "prod.secret.exs"
