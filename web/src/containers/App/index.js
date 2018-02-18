@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Match exactly pattern="/" component={Home} />
+          <Match exactly pattern="/home" component={Home} />
           <Match exactly pattern="/login" component={Login} />
           <Match exactly pattern="/signup" component={Signup} />
           <Miss component={NotFound} />
