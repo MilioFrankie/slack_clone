@@ -5,13 +5,28 @@ import Home from '../Home';
 import NotFound from '../../components/NotFound';
 import Login from '../Login';
 import Signup from '../Signup';
+import { authenticate } from '../../actions/session';
+import { connect } from 'react-redux';
+
+type Props = {
+  authenticate: () => void
+};
 
 class App extends Component {
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      this.props.authenticate();
+    }
+  }
+  props: Props;
+
   render() {
     return (
       <BrowserRouter>
         <div>
-          <Match exactly pattern="/home" component={Home} />
+          <Match exactly pattern="/" component={Home} />
           <Match exactly pattern="/login" component={Login} />
           <Match exactly pattern="/signup" component={Signup} />
           <Miss component={NotFound} />
@@ -21,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { authenticate })(App);
