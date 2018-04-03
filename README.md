@@ -1,5 +1,5 @@
 # SlackClone
-slack clone
+slack clone https://medium.com/@benhansen/lets-build-a-slack-clone-with-elixir-phoenix-and-react-part-1-project-setup-3252ae780a1
 ____________________________________________________
 ## Setup
 1. git clone project
