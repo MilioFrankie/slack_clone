@@ -25,7 +25,7 @@ defmodule SlackClone.User do
     struct
     |> changeset(params)
     |> cast(params, [:password])
-    |> validate_length(:password, min: 6, max: 100)
+    |> validate_length(:password, min: 6, max: 100) |> IO.inspect
     |> put_password_hash()
   end
 

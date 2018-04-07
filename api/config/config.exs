@@ -29,4 +29,8 @@ config :guardian, Guardian,
   verify_issuer: true,
   serializer: SlackClone.GuardianSerializer
 
+  config :cors_plug,
+    origin: ["*"],
+    max_age: 86400,
+    methods: ["GET", "POST"]
 import_config "#{Mix.env}.exs"

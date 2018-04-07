@@ -28,6 +28,7 @@ defmodule SlackClone.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
+
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
@@ -35,6 +36,6 @@ defmodule SlackClone.Endpoint do
     store: :cookie,
     key: "_slack_clone_key",
     signing_salt: "rJkrouFy"
-
+  plug CORSPlug
   plug SlackClone.Router
 end
