@@ -1,0 +1,1 @@
+alias SlackClone.{User, Repo}
