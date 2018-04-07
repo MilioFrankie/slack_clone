@@ -22,6 +22,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
+config :guardian, Guardian,
+  secret_key: "dhP0MYPOksXpbb3RqXI428LHO+QsIg1363mUHEGG7odNMhXWqG50J4j2mF/2tkxB",
+  issuer: "SlackClone",
+  ttl: {30, :days},
+  verify_issuer: true,
+  serializer: SlackClone.GuardianSerializer
+
 import_config "#{Mix.env}.exs"
